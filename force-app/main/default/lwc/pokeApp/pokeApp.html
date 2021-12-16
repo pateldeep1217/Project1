@@ -1,0 +1,7 @@
+<template>
+    <template for:each={pokemonArray} for:item="pokemon">
+        <div key={pokemon.id}>
+            <c-pokedex poke-index={pokemon}></c-pokedex>
+        </div>
+    </template>
+</template>
