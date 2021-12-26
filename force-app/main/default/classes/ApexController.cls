@@ -9,4 +9,7 @@ public with sharing class ApexController {
     public static List<Live_Class__c> getLiveClasses(){
         return [SELECT Id, Product__r.Name, Starting__c FROM Live_Class__c];
     }
+
+
+
 }

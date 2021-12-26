@@ -1,8 +1,9 @@
-trigger AccountTriggerAssignment on Account (before insert, after insert, after update) {
-    
+trigger AccountTrigger on Account (after insert, after update) {
+
+
     Switch on Trigger.OperationType {
         when BEFORE_INSERT {
-            
+
         } 
         when BEFORE_UPDATE {
             
@@ -11,7 +12,7 @@ trigger AccountTriggerAssignment on Account (before insert, after insert, after 
             
         }
         when AFTER_INSERT {
-
+            AccountTriggerHelper.afterInsertAccount(Trigger.new);
         }
         when AFTER_UPDATE {
             
@@ -26,4 +27,6 @@ trigger AccountTriggerAssignment on Account (before insert, after insert, after 
         }
         
     }
+    
+
 }

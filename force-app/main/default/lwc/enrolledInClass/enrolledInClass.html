@@ -7,6 +7,7 @@
         aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
         <div class="slds-modal__container">
             <header class="slds-modal__header">
+                <!-- sldsValidatorIgnoreNextLine -->
                 <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
                     <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
                         <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
@@ -19,30 +20,43 @@
                 <lightning-card title="Enroll In Class">
                     <div class="slds-p-around_medium">
 
-                        <!-- <lightning-record-form object-api-name={studentsEnrolledObj} fields={fields}
-                            onsuccess={handleSuccess}>
-                        </lightning-record-form> -->
-                        <!-- <template for:each={liveclassList} for:item="liveClass">
-                            <div key={liveClass.Id}>
-                                <p>Id : {liveClass.Name}</p>
+                        <p>User Id: {userId}</p>
+                        <template if:true={userDetail}>
 
-                            </div>
-                        </template> -->
+                            <p>Customer Account: {userDetail.Name.value}</p>
+                            <p>Live Class: {liveclassList}</p>
+                            <p>Contact: {userDetail.Name.value}</p>
 
-                        <p>id: {liveclassList}</p>
+                            <!-- <lightning-record-form object-api-name={StudentEnrolledObj} fields={fields}
+                                onsuccess={handleSuccess}>
+                            </lightning-record-form> -->
 
-                        <lightning-record-edit-form object-api-name={studentsEnrolledObj}>
 
-                            <lightning-input-field field-name={fields.accountFeild}></lightning-input-field>
-                            <!-- <lightning-input-field field-name={fields.liveclassField}></lightning-input-field> -->
-                            <lightning-input-field field-name={fields.liveclassField}>
-                            </lightning-input-field>
-                            <lightning-input-field field-name={fields.contactField}></lightning-input-field>
-                            <lightning-button class="slds-m-around_xx-small" label="Save" type="submit">
-                            </lightning-button>
-                        </lightning-record-edit-form>
+
+                            <lightning-record-edit-form object-api-name={StudentEnrolledObj}>
+
+                                <lightning-input-field field-name={fields.accountFeild} v>
+                                </lightning-input-field>
+                                <lightning-input-field field-name={fields.liveclassField}>
+                                </lightning-input-field>
+
+                                <lightning-input-field field-name={fields.contactField}>
+                                </lightning-input-field>
+
+                                <lightning-button class="slds-m-around_xx-small" label="Save" type="submit"
+                                    onclick={handleSuccess}>
+                                </lightning-button>
+                            </lightning-record-edit-form>
+
+                        </template>
+
+
+
                     </div>
                 </lightning-card>
+
+                <!-- <lightning-record-form object-api-name={studentsEnrolledObj} fields={fields} onsuccess={handleSuccess}>
+                </lightning-record-form> -->
             </div>
             <footer class="slds-modal__footer">
                 <button class="slds-button slds-button_neutral" onclick={handleClose}>Cancel</button>
@@ -52,3 +66,24 @@
     </section>
     <div class="slds-backdrop slds-backdrop_open"></div>
 </template>
+
+
+
+
+
+<!-- <form class="createForm">
+    <lightning-input label="Customer Account" name="CustomerAccount"
+        onchange={changeHandler} class="slds-m-bottom_x-small"
+        value={userDetail.Name.value}>
+    </lightning-input>
+
+    <lightning-input label="Live Class" name="LiveClass" onchange={changeHandler}
+        class="slds-m-bottom_x-small" value={liveclassList}>
+    </lightning-input>
+
+    <lightning-input label="Contact" name="Contact" onchange={changeHandler}
+        class="slds-m-bottom_x-small" value={userDetail.Name.Value}>
+    </lightning-input>
+    <lightning-button label="Enroll" variant="brand" onclick={enrollStudent}>
+    </lightning-button>
+</form> -->

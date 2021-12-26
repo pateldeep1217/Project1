@@ -1,7 +1,7 @@
 .box-color{
     background-color: #212F46;
     line-height: 2;
-    
+    color: #fff;
     font-size: 18px;
     
 }
@@ -13,4 +13,10 @@
     border-radius: 10px;
     outline: none;
     border: none;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #aecbfb;
+    color: #333;
 }

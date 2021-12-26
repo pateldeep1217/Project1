@@ -1,0 +1,54 @@
+<template>
+    <lightning-card class="slds-p-around_medium slds-text-align--center">
+
+        <div class="slds-p-around_medium ">
+            <lightning-input label="Search Product" type="search" onchange={handleSearchKeyChange}>
+            </lightning-input>
+            <table>
+                <thead>
+                    <tr>
+                        <template for:each={headings} for:item="heading">
+                            <th key={heading}>{heading}</th>
+                        </template>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={fullTableData} for:item="data">
+                        <tr key={data.Id}>
+                            <td>{data.Product2.Name}</td>
+                            <td>${data.UnitPrice}</td>
+                            <td>{data.Product2.Description}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+
+
+
+        <!-- <div class="slds-p-around_medium">
+            <table>
+                <thead>
+                    <tr>
+                        <template for:each={headings} for:item="heading">
+                            <th key={heading}>{heading}</th>
+                        </template>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={yourProductfilteredData} for:item="data">
+                        <tr key={data.Id}>
+                            <td>{data.Product2.Name}</td>
+                            <td>${data.Product2.UnitPrice}</td>
+                            <td>{data.Product2.Description}</td>
+                            <td><button>More Info</button></td>
+
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div> -->
+    </lightning-card>
+</template>
