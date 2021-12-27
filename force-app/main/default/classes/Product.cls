@@ -9,8 +9,10 @@ public with sharing class Product {
         
     
         return[SELECT Product2.Name , Pricebook2.Name, Product2.Description, UnitPrice from PricebookEntry 
-                WHERE pricebook2.Name = 'Standard Price Book' AND product2.Name LIKE:key];
+                WHERE pricebook2.Name = 'Standard Price Book' ];
     }
+
+
 
 
 }

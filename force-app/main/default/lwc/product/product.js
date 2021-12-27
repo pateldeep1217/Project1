@@ -9,7 +9,7 @@ export default class Product extends LightningElement {
     fullTableData;
     searchKey 
 
-    @wire(getProducts,{searchKey:'$searchKey'})
+    @wire(getProducts)
     productHandler({data,error}){
         if(data){
            
@@ -22,10 +22,7 @@ export default class Product extends LightningElement {
         }
     }
 
-    handleSearchKeyChange(event){
-        this.searchKey = event.target.value
-        console.log(this.searchKey);
-    }
+
 
   
 

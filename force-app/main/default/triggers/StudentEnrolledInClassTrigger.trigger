@@ -13,8 +13,7 @@ trigger StudentEnrolledInClassTrigger on Student_Enrolled_In_Class__c (after ins
             List<AggregateResult> results= [SELECT COUNT(Customer_Account__c) Students, Live_Class__c FROM Student_Enrolled_In_Class__c GROUP BY Live_Class__c];
             List<Live_Class__c> liveClasses = new List<Live_Class__c>();
             for(Student_Enrolled_In_Class__c StudentInClasses: Trigger.new){
-                // String liveClass = StudentInClasses.Live_Class__c;
-                // system.debug('Live Class ID - ' + liveClass);
+
              
                 for(AggregateResult result:results){
              
