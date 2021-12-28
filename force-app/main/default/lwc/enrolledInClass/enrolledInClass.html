@@ -20,12 +20,11 @@
                 <lightning-card title="Enroll In Class">
                     <div class="slds-p-around_medium">
 
-                        <p>User Id: {userId}</p>
+
                         <template if:true={userDetail}>
 
-                            <p>Customer Account: {userDetail.Name.value}</p>
-                            <p>Live Class: {liveclassList}</p>
-                            <p>Contact: {userDetail.Name.value}</p>
+
+
 
                             <!-- <lightning-record-form object-api-name={StudentEnrolledObj} fields={fields}
                                 onsuccess={handleSuccess}>
@@ -35,11 +34,14 @@
 
                             <lightning-record-edit-form object-api-name={StudentEnrolledObj}>
 
+                                <p>Contact: {userDetail.Name.value}</p>
                                 <lightning-input-field field-name={fields.accountFeild} v>
                                 </lightning-input-field>
+                                <p>Live Class: {liveclassList}</p>
                                 <lightning-input-field field-name={fields.liveclassField}>
                                 </lightning-input-field>
 
+                                <p>Contact: {userDetail.Name.value}</p>
                                 <lightning-input-field field-name={fields.contactField}>
                                 </lightning-input-field>
 
@@ -66,24 +68,3 @@
     </section>
     <div class="slds-backdrop slds-backdrop_open"></div>
 </template>
-
-
-
-
-
-<!-- <form class="createForm">
-    <lightning-input label="Customer Account" name="CustomerAccount"
-        onchange={changeHandler} class="slds-m-bottom_x-small"
-        value={userDetail.Name.value}>
-    </lightning-input>
-
-    <lightning-input label="Live Class" name="LiveClass" onchange={changeHandler}
-        class="slds-m-bottom_x-small" value={liveclassList}>
-    </lightning-input>
-
-    <lightning-input label="Contact" name="Contact" onchange={changeHandler}
-        class="slds-m-bottom_x-small" value={userDetail.Name.Value}>
-    </lightning-input>
-    <lightning-button label="Enroll" variant="brand" onclick={enrollStudent}>
-    </lightning-button>
-</form> -->

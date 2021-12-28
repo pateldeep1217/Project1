@@ -11,22 +11,7 @@ trigger contactTrigger1 on Contact (after insert) {
             
         }
         when AFTER_INSERT {
-            List<Account> accountNew = new List<Account>();
-            
-            Account registrantAccount = [SELECT Id, Name FROM Account WHERE Name = 'Registrants'];
-            
-            for(Contact contactRec: Trigger.new){               
-
-                if(contactRec.AccountId == registrantAccount.Id){
-                    Account accountRec = new Account(Name = contactRec.FirstName + ' ' + contactRec.LastName); 
-                    accountNew.add(accountRec);    
-                }                    
-                
-            }
-            
-            insert accountNew;
-            
-         
+            ContactTriggerHelper.contactTrigger(Trigger.new);
             
         }
         when AFTER_UPDATE {
